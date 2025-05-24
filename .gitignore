@@ -6,3 +6,4 @@ Ark_MICCAI2023/Outputs
 Ark_MICCAI2023/Outputs/*
 *__pycache__*
 *.pyc
+.DS_Store
