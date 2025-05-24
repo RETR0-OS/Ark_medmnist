@@ -1,87 +1,87 @@
 ChestMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/chestmnist/chestmnist_test.csv
-    val_list: D:/medmnist/224X224/chestmnist/chestmnist_val.csv
-    test_list: D:/medmnist/224X224/chestmnist/chestmnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your dataset path
+    train_list: D:/medmnist/224X224/chestmnist/chestmnist_test.csv # Modify as per your dataset path
+    val_list: D:/medmnist/224X224/chestmnist/chestmnist_val.csv # Modify as per your dataset path
+    test_list: D:/medmnist/224X224/chestmnist/chestmnist_test.csv # Modify as per your data path
     diseases: ['atelectasis', 'cardiomegaly', 'effusion', 'infiltration', 'mass', 'nodule', 'pneumonia', 'pneumothorax', 'consolidation', 'edema', 'emphysema', 'fibrosis', 'pleural', 'hernia']
     task_type: multi-label classification
 
 BloodMNIST:
-  data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-  train_list: D:/medmnist/224X224/bloodmnist/bloodmnist_train.csv
-  val_list: D:/medmnist/224X224/bloodmnist/bloodmnist_val.csv
-  test_list: D:/medmnist/224X224/bloodmnist/bloodmnist_test.csv
+  data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+  train_list: D:/medmnist/224X224/bloodmnist/bloodmnist_train.csv # Modify as per your data path
+  val_list: D:/medmnist/224X224/bloodmnist/bloodmnist_val.csv # Modify as per your data path
+  test_list: D:/medmnist/224X224/bloodmnist/bloodmnist_test.csv # Modify as per your data path
   diseases: ['basophil', 'eosinophil', 'erythroblast', 'immature granulocytes(myelocytes, metamyelocytes and promyelocytes)', 'lymphocyte', 'monocyte', 'neutrophil', 'platelet']
   task_type: multi-class classification
 
 BreastMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/breastmnist/breastmnist_train.csv
-    val_list: D:/medmnist/224X224/breastmnist/breastmnist_val.csv
-    test_list: D:/medmnist/224X224/breastmnist/breastmnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/breastmnist/breastmnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/breastmnist/breastmnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/breastmnist/breastmnist_test.csv # Modify as per your data path
     diseases: ['malignant', 'normal, benign']
     task_type: binary classification
 
 PathMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/pathmnist/pathmnist_train.csv
-    val_list: D:/medmnist/224X224/pathmnist/pathmnist_val.csv
-    test_list: D:/medmnist/224X224/pathmnist/pathmnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/pathmnist/pathmnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/pathmnist/pathmnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/pathmnist/pathmnist_test.csv # Modify as per your data path
     diseases: ['adipose', 'background', 'debris', 'lymphocytes', 'mucus', 'smooth muscle', 'normal colon', 'cancer-associated stroma', 'colorectal adenocarcinoma epithelium']
     task_type: multi-class classification
 
 DermaMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/dermamnist/dermamnist_train.csv
-    val_list: D:/medmnist/224X224/dermamnist/dermamnist_val.csv
-    test_list: D:/medmnist/224X224/dermamnist/dermamnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/dermamnist/dermamnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/dermamnist/dermamnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/dermamnist/dermamnist_test.csv # Modify as per your data path
     diseases: ['actinic keratoses and intraepithelial carcinoma', 'basal cell carcinoma', 'benign keratosis-like lesions', 'dermatofibroma', 'melanoma', 'melanocytic nevi', 'vascular lesions']
     task_type: multi-class classification
 
 OctMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/octmnist/octmnist_train.csv
-    val_list: D:/medmnist/224X224/octmnist/octmnist_val.csv
-    test_list: D:/medmnist/224X224/octmnist/octmnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/octmnist/octmnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/octmnist/octmnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/octmnist/octmnist_test.csv # Modify as per your data path
     diseases: ['choroidal neovascularization', 'diabetic macular edema', 'drusen', 'normal']
     task_type: multi-class classification
 
 PneumoniaMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/pneumoniamnist/pneumoniamnist_train.csv
-    val_list: D:/medmnist/224X224/pneumoniamnist/pneumoniamnist_val.csv
-    test_list: D:/medmnist/224X224/pneumoniamnist/pneumoniamnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/pneumoniamnist/pneumoniamnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/pneumoniamnist/pneumoniamnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/pneumoniamnist/pneumoniamnist_test.csv # Modify as per your data path
     diseases: ['normal', 'pneumonia']
     task_type: binary classification
 
 TissueMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/tissuemnist/tissuemnist_train.csv
-    val_list: D:/medmnist/224X224/tissuemnist/tissuemnist_val.csv
-    test_list: D:/medmnist/224X224/tissuemnist/tissuemnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/tissuemnist/tissuemnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/tissuemnist/tissuemnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/tissuemnist/tissuemnist_test.csv # Modify as per your data path
     diseases: ['Collecting Duct, Connecting Tubule', 'Distal Convoluted Tubule', 'Glomerular endothelial cells', 'Interstitial endothelial cells', 'Leukocytes', 'Podocytes', 'Proximal Tubule Segments', 'Thick Ascending Limb']
     task_type: multi-class classification
 
 OrganAMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/organamnist/organamnist_train.csv
-    val_list: D:/medmnist/224X224/organamnist/organamnist_val.csv
-    test_list: D:/medmnist/224X224/organamnist/organamnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/organamnist/organamnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/organamnist/organamnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/organamnist/organamnist_test.csv # Modify as per your data path
     diseases: ['bladder', 'femur-left','femur-right','heart','kidney-left','kidney-right','liver','lung-left','lung-right','pancreas','spleen']
     task_type: multi-class classification
 
 OrganCMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/organcmnist/organcmnist_train.csv
-    val_list: D:/medmnist/224X224/organcmnist/organcmnist_val.csv
-    test_list: D:/medmnist/224X224/organcmnist/organcmnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/organcmnist/organcmnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/organcmnist/organcmnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/organcmnist/organcmnist_test.csv # Modify as per your data path
     diseases: ['bladder', 'femur-left','femur-right','heart','kidney-left','kidney-right','liver','lung-left','lung-right','pancreas','spleen']
     task_type: multi-class classification
 
 OrganSMNIST:
-    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224
-    train_list: D:/medmnist/224X224/organsmnist/organsmnist_train.csv
-    val_list: D:/medmnist/224X224/organsmnist/organsmnist_val.csv
-    test_list: D:/medmnist/224X224/organsmnist/organsmnist_test.csv
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/organsmnist/organsmnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/organsmnist/organsmnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/organsmnist/organsmnist_test.csv # Modify as per your data path
     diseases: ['bladder', 'femur-left','femur-right','heart','kidney-left','kidney-right','liver','lung-left','lung-right','pancreas','spleen']
     task_type: multi-class classification
