@@ -3,7 +3,7 @@ ChestXray14:
   train_list: dataset/Xray14_train_official.txt
   val_list: dataset/Xray14_val_official.txt
   test_list:  dataset/Xray14_test_official.txt
-  diseases: ['Atelectasis', 'Cardiomegaly', 'Effusion', 'Infiltration', 'Mass', 'Nodule', 'Pneumonia', 'Pneumothorax', 'Consolidation', 'Edema', 'Emphysema', 'Fibrosis', 'Pleural_Thickening', 'Hernia']
+  diseases: ['Atelectasis', 'Cardiomegaly', 'Ef~fusion', 'Infiltration', 'Mass', 'Nodule', 'Pneumonia', 'Pneumothorax', 'Consolidation', 'Edema', 'Emphysema', 'Fibrosis', 'Pleural_Thickening', 'Hernia']
   task_type: multi-label classification
 
 CheXpert: 

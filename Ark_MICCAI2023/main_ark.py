@@ -100,6 +100,7 @@ def get_args_parser():
                       default="LSR-Ones", type="string")
     parser.add_option("--unknown_label", dest="unknown_label", help="the label assigned to unknown data",
                       default=0, type="int")
+    parser.add_option("--dataset_config", dest="dataset_config", help="absolute path for the dataset YAML configuration file", default="datasets_config.yaml", type="str")
 
 
     (options, args) = parser.parse_args()
@@ -114,7 +115,7 @@ def main(args):
     model_path = os.path.join("./Models",exp_name)
     output_path = os.path.join("./Outputs",exp_name)
 
-    datasets_config = get_config('datasets_config.yaml')
+    datasets_config = get_config(args.dataset_config)
     for dataset in args.dataset_list:
         assert dataset in list(datasets_config.keys())
 

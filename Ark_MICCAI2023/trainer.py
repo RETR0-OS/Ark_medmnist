@@ -20,6 +20,7 @@ def train_one_epoch(model, use_head_n, dataset, data_loader_train, device, crite
     print(coff)
     end = time.time()
     for i, (samples1, samples2, targets) in enumerate(data_loader_train):
+        # print(samples2.shape)
         samples1, samples2, targets = samples1.float().to(device), samples2.float().to(device), targets.float().to(device)
         
         feat_t, pred_t = teacher(samples2, use_head_n)
