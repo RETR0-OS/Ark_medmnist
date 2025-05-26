@@ -723,7 +723,7 @@ class DermaMNIST(Dataset):
 
 ## Multi Class Classification
 class OctMNIST(Dataset):
-    def __init__(self, images_path, file_path, augment, num_class=7, annotation_percent=100):
+    def __init__(self, images_path, file_path, augment, num_class=4, annotation_percent=100):
         self.img_list = []  # list of image paths
         self.img_label = []  # list of image labels
         self.augment = augment  # augmentation functions to apply
@@ -745,16 +745,19 @@ class OctMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
         else:
             imageData = (np.array(img_data)).astype('uint8')
             augmented = self.train_augment(image=imageData, mask=imageData)
-            student_img = np.transpose(augmented['image'] / 255.0, (2, 0, 1)).astype('float32')
-            teacher_img = np.transpose(augmented['image'] / 255.0, (2, 0, 1)).astype('float32')
+            student_img = augmented['image'] / 255.0
+            teacher_img = augmented['image'] / 255.0
+            student_img = np.transpose(student_img, (2, 0, 1)).astype('float32')
+            teacher_img = np.transpose(teacher_img, (2, 0, 1)).astype('float32')
 
+        # print(f"Student shape: {student_img.shape} \t Teacher shape: {teacher_img.shape}")
         return student_img, teacher_img, img_label
 
     def __len__(self):
@@ -825,7 +828,7 @@ class TissueMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
@@ -865,7 +868,7 @@ class OrganAMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
@@ -905,7 +908,7 @@ class OrganSMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
@@ -945,7 +948,7 @@ class OrganCMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
