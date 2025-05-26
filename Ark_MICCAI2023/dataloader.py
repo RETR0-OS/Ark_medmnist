@@ -548,10 +548,11 @@ class ChestMNIST(Dataset):
         else:
             imageData = (np.array(img_data)).astype('uint8')
             augmented = self.train_augment(image=imageData, mask=imageData)
-            student_img = np.expand_dims(augmented['image'], axis=-1) / 255.0
-            student_img = np.repeat(student_img, 3, axis=-1).transpose(2, 0, 1)  # Transpose to (3, 224, 224)
-            teacher_img = np.expand_dims(augmented['image'], axis=-1) / 255.0
-            teacher_img = np.repeat(teacher_img, 3, axis=-1).transpose(2, 0, 1)  # Transpose to (3, 224, 224)
+            student_img = augmented['image'] / 255.0
+            student_img = np.transpose(student_img, (2, 0, 1)).astype('float32')
+            print(f"Student Image Shape: {student_img.shape}")
+            teacher_img = augmented['image'] / 255.0
+            teacher_img = np.transpose(teacher_img, (2, 0, 1)).astype('float32')
 
         # print(f"Student Image Shape: {student_img.shape}, Teacher Image Shape: {teacher_img.shape}")
 
