@@ -541,7 +541,7 @@ class ChestMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = torch.FloatTensor(self.img_label[idx])
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
@@ -585,7 +585,7 @@ class BloodMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
@@ -665,7 +665,7 @@ class PathMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
@@ -705,7 +705,7 @@ class DermaMNIST(Dataset):
 
         img_path = self.img_list[idx]
         img_label = self.img_label[idx]
-        img_data = Image.open(img_path).resize((224, 224))
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
 
         if self.augment != None:
             student_img, teacher_img = self.augment(img_data), self.augment(img_data)
