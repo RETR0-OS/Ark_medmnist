@@ -125,7 +125,7 @@ def main(args):
     for dataset in args.dataset_list:
         dataset_train_list.append(
             dict_dataloarder[dataset](images_path=datasets_config[dataset]['data_dir'], file_path=datasets_config[dataset]['train_list'],
-                                 augment=None)
+                                 augment=build_transform_classification(normalize=args.normalization, mode="train"))
         )
         dataset_val_list.append(
             dict_dataloarder[dataset](images_path=datasets_config[dataset]['data_dir'], file_path=datasets_config[dataset]['val_list'],

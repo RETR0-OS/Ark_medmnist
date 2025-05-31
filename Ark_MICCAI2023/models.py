@@ -49,7 +49,8 @@ def build_omni_model_from_checkpoint(args, num_classes_list, key):
     
     if args.model_name == "swin_base": #swin_base_patch4_window7_224
         model = ArkSwinTransformer(num_classes_list, args.projector_features, args.use_mlp, patch_size=4, window_size=7, embed_dim=128, depths=(2, 2, 18, 2), num_heads=(4, 8, 16, 32))
-    
+    else:
+        raise NotImplementedError("This backbone model has not been implemented yet. Please use swin_base for now")
     if args.pretrained_weights is not None:
         checkpoint = torch.load(args.pretrained_weights)
         state_dict = checkpoint[key]
