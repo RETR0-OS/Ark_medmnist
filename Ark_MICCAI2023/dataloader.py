@@ -550,7 +550,6 @@ class ChestMNIST(Dataset):
             augmented = self.train_augment(image=imageData, mask=imageData)
             student_img = augmented['image'] / 255.0
             student_img = np.transpose(student_img, (2, 0, 1)).astype('float32')
-            print(f"Student Image Shape: {student_img.shape}")
             teacher_img = augmented['image'] / 255.0
             teacher_img = np.transpose(teacher_img, (2, 0, 1)).astype('float32')
 
