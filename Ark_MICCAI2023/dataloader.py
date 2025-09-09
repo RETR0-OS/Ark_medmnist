@@ -150,7 +150,6 @@ class ChestXray14(Dataset):
 
         return len(self.img_list)
 
-
 class CheXpert(Dataset):
 
     def __init__(self, images_path, file_path, augment, num_class=14,
@@ -236,7 +235,6 @@ class CheXpert(Dataset):
 
         return len(self.img_list)
 
-
 class ShenzhenCXR(Dataset):
 
     def __init__(self, images_path, file_path, augment, num_class=1, annotation_percent=100):
@@ -305,7 +303,6 @@ class ShenzhenCXR(Dataset):
 
         return len(self.img_list)
 
-
 class VinDrCXR(Dataset):
     def __init__(self, images_path, file_path, augment, num_class=6, annotation_percent=100):
         self.img_list = []
@@ -365,7 +362,6 @@ class VinDrCXR(Dataset):
     def __len__(self):
 
         return len(self.img_list)
-
 
 class RSNAPneumonia(Dataset):
 
@@ -432,7 +428,6 @@ class RSNAPneumonia(Dataset):
     def __len__(self):
 
         return len(self.img_list)
-
 
 class MIMIC(Dataset):
 
@@ -963,6 +958,46 @@ class OrganCMNIST(Dataset):
     def __len__(self):
 
         return len(self.img_list)
+    
+## Ordinal Regression (abstracted as Multi Class Classification)
+class RetinaMNIST(Dataset):
+    def __init__(self, images_path, file_path, augment, num_class=5, annotation_percent=100):
+        self.img_list = []  # list of image paths
+        self.img_label = []  # list of image labels
+        self.augment = augment  # augmentation functions to apply
+        self.train_augment = build_ts_transformations()  # training augmentations
+
+        with open(file_path, "r") as fr:
+            csvReader = csv.reader(fr)
+            next(csvReader, None)
+            for line in csvReader:
+                imagePath = line[0]
+                imageLabel = line[1:]
+                imageLabel = eval(imageLabel[0])[0]
+                self.img_list.append(imagePath)
+                one_hot_encoding = [0] * num_class
+                one_hot_encoding[imageLabel] = 1
+                self.img_label.append(np.array(one_hot_encoding))
+
+    def __getitem__(self, idx):
+
+        img_path = self.img_list[idx]
+        img_label = self.img_label[idx]
+        img_data = Image.open(img_path).convert('RGB').resize((224, 224))
+
+        if self.augment != None:
+            student_img, teacher_img = self.augment(img_data), self.augment(img_data)
+        else:
+            imageData = (np.array(img_data)).astype('uint8')
+            augmented = self.train_augment(image=imageData, mask=imageData)
+            student_img = np.transpose(augmented['image'] / 255.0, (2, 0, 1)).astype('float32')
+            teacher_img = np.transpose(augmented['image'] / 255.0, (2, 0, 1)).astype('float32')
+
+        return student_img, teacher_img, img_label
+
+    def __len__(self):
+
+        return len(self.img_list)
 
 
 
@@ -984,4 +1019,5 @@ dict_dataloarder = {
     "OrganAMNIST": OrganAMNIST,
     "OrganSMNIST": OrganSMNIST,
     "OrganCMNIST": OrganCMNIST,
+    "RetinaMNIST": RetinaMNIST
 }

@@ -85,3 +85,12 @@ OrganSMNIST:
     test_list: D:/medmnist/224X224/organsmnist/organsmnist_test.csv
     diseases: ['bladder', 'femur-left','femur-right','heart','kidney-left','kidney-right','liver','lung-left','lung-right','pancreas','spleen']
     task_type: multi-class classification
+
+RetinaMNIST:
+    data_dir: D:/Ark/Ark_MICCAI2023/medmnist/224X224 # Modify as per your data path
+    train_list: D:/medmnist/224X224/retinamnist/retinamnist_train.csv # Modify as per your data path
+    val_list: D:/medmnist/224X224/retinamnist/retinamnist_val.csv # Modify as per your data path
+    test_list: D:/medmnist/224X224/retinamnist/retinamnist_test.csv # Modify as per your data path
+    diseases: ['no DR', 'mild', 'moderate', 'severe', 'proliferative DR']
+    task_type: multi-class classification
+
